@@ -109,7 +109,7 @@ Kohana::modules(array(
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 
-	 'notices2'  => MODPATH.'notices2',  // Notices module
+	 'notices'   => MODPATH.'notices',  // Notices module
 	 'kostache'  => MODPATH.'kostache',  // Kostache module (Kohana+Mustache)
 	));
 
