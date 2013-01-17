@@ -1,0 +1,39 @@
+<div id="workdays">
+    <h2>My work days</h2>
+    <form method="POST" id="job_edit" action="{{base_url}}workdays/edit">
+		<table>
+			<colgroup>
+				<col width="5%" />
+				<col />
+				<col width="20%" />
+				<col width="20%" />
+				<col width="20%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>#</th>
+				<th>Day</th>
+				<th>Job</th>
+				<th>Start time</th>
+				<th>End time</th>
+			</tr>
+			</thead>
+			<tbody>
+				{{#days}}
+					<tr>
+						<td>{{day_number}}</td>
+						<td>{{day_text}}</td>
+						<td>
+							<select>
+								<option>Sortex</option>
+								<option>Home</option>
+							</select>
+						</td>
+						<td><input type="text" name="start"/></td>
+						<td><input type="text" name="end"/></td>
+					</tr>
+				{{/days}}
+			</tbody>
+		</table>
+    </form>
+</div>

@@ -2,6 +2,12 @@
 
 class View_Layout extends Kostache_Layout {
 
+	public $show_profiler = FALSE;
+	public function profiler()
+	{
+		return View::factory('profiler/stats')->render();
+	}
+
 	protected $_partials = array(
 		'notices' => '_elements/notices',
 	);

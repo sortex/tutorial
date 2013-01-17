@@ -1,52 +1,59 @@
-div#header {
-  width: 60%;
-  margin: 0 auto;
+#wrapper {
+  float: left; width: 100%; padding: 30px 0 100px;
 
-  h1 { text-align: center; }
-  ul {
-    display: inline-block;
-    list-style: none;
-    li {
-      float: left;
-      width: 100px;
-      height: 20px;
-      margin-right: 10px;
-      border: 5px ridge #000;
+  div#header {
+    width: 60%;
+    margin: 0 auto;
 
-      a {
+    h1 { text-align: center; }
+    ul {
+      display: inline-block;
+      list-style: none;
+      li {
         float: left;
-        width: 100%;
-        line-height: 20px;
-        text-align: center;
-        color: #000000;
-        &:hover{
-          background-color: #48c6ec;
-          color: #ffffff;
-          font-weight: bold;
+        width: 100px;
+        height: 20px;
+        margin-right: 10px;
+        border: 5px ridge #000;
+
+        a {
+          float: left;
+          width: 100%;
+          line-height: 20px;
+          text-align: center;
+          color: #000000;
+          &:hover{
+            background-color: #48c6ec;
+            color: #ffffff;
+            font-weight: bold;
+          }
         }
       }
     }
   }
-}
 
 
-div#content {
-  width: 60%;
-  margin: 0 auto;
+  div#content {
+    width: 60%;
+    margin: 0 auto;
 
-  a { font-weight: bold; color: #0000DA; }
+    a { font-weight: bold; color: #0000DA; }
 
-  h2 { text-align: center; }
+    h2 { text-align: center; color: #000000; }
 
-  table {
-    float: left;
-    width: 100%;
+    table {
+      float: left;
+      width: 100%;
 
-  td, th {
-    border: 1px solid #000000;
-    text-align: center;
-    padding: 5px;
+      td, th {
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 5px;
+      }
     }
   }
-}
 
+  #profiler {
+    float: left; width: 100%; margin-top: 60px;
+  }
+}

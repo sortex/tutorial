@@ -12,9 +12,9 @@ class Controller_Jobs extends Controller_Site {
 	{
 		$job_id  = $this->request->param('id');
 		$user_id = $this->request->query('user_id');
-		$username = $this->request->query('username');
 
-		$this->view->username = $username;
+		$user = new Model_User($user_id);
+		$this->view->username = $user->username;
 		$this->view->user_id = $user_id;
 
 		$post = $this->request->post();

@@ -36,4 +36,19 @@ class Model_User extends ORM {
 			->as_array();
 	}
 
+	/**
+	 * Get first user creation
+	 *
+	 * @return array
+	 */
+	public static function get_first_user_created()
+	{
+		return DB::select()
+			->from('users')
+			->order_by('created', 'ASC')
+			->limit(1)
+			->execute()
+			->as_array();
+	}
+
 } // End Model_User

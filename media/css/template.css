@@ -1,40 +1,48 @@
-div#header {
-  width: 60%;
-  margin: 0 auto; }
-  div#header h1 {
-    text-align: center; }
-  div#header ul {
-    display: inline-block;
-    list-style: none; }
-    div#header ul li {
-      float: left;
-      width: 100px;
-      height: 20px;
-      margin-right: 10px;
-      border: 5px ridge black; }
-      div#header ul li a {
+#wrapper {
+  float: left;
+  width: 100%;
+  padding: 30px 0 100px; }
+  #wrapper div#header {
+    width: 60%;
+    margin: 0 auto; }
+    #wrapper div#header h1 {
+      text-align: center; }
+    #wrapper div#header ul {
+      display: inline-block;
+      list-style: none; }
+      #wrapper div#header ul li {
         float: left;
-        width: 100%;
-        line-height: 20px;
-        text-align: center;
-        color: #000000; }
-        div#header ul li a:hover {
-          background-color: #48c6ec;
-          color: #ffffff;
-          font-weight: bold; }
-
-div#content {
-  width: 60%;
-  margin: 0 auto; }
-  div#content a {
-    font-weight: bold;
-    color: #0000DA; }
-  div#content h2 {
-    text-align: center; }
-  div#content table {
-    float: left;
-    width: 100%; }
-    div#content table td, div#content table th {
-      border: 1px solid black;
+        width: 100px;
+        height: 20px;
+        margin-right: 10px;
+        border: 5px ridge black; }
+        #wrapper div#header ul li a {
+          float: left;
+          width: 100%;
+          line-height: 20px;
+          text-align: center;
+          color: #000000; }
+          #wrapper div#header ul li a:hover {
+            background-color: #48c6ec;
+            color: #ffffff;
+            font-weight: bold; }
+  #wrapper div#content {
+    width: 60%;
+    margin: 0 auto; }
+    #wrapper div#content a {
+      font-weight: bold;
+      color: #0000DA; }
+    #wrapper div#content h2 {
       text-align: center;
-      padding: 5px; }
+      color: #000000; }
+    #wrapper div#content table {
+      float: left;
+      width: 100%; }
+      #wrapper div#content table td, #wrapper div#content table th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px; }
+  #wrapper #profiler {
+    float: left;
+    width: 100%;
+    margin-top: 60px; }

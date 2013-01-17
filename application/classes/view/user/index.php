@@ -4,6 +4,7 @@ class View_User_Index extends View_Layout {
 
 	public $title = 'User\'s data';
 
+	private $_date_format = "d/m/Y H:i";
 
 	public function users()
 	{
@@ -11,8 +12,12 @@ class View_User_Index extends View_Layout {
 
 		foreach ($users as & $user)
 		{
-			$user['created']  = $user['created']  ? date("d/m/Y H:i", $user['created'])  : '--';
-			$user['modified'] = $user['modified'] ? date("d/m/Y H:i", $user['modified']) : '--';
+			foreach (['created', 'modified'] as $field_name)
+			{
+				$user[$field_name]  = $user[$field_name]
+					? date($this->_date_format, $user[$field_name])
+					: '--';
+			}
 		}
 		unset($user);
 

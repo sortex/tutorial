@@ -46,16 +46,6 @@ class Controller_Site extends Controller {
 			// Render view
 			$output = (string) $this->view;
 
-			// Add profiler if development
-			if (Kohana::$environment === Kohana::DEVELOPMENT && ! $this->request->is_ajax())
-			{
-				if (! $this->response->headers('Content-Type'))
-				{
-//					$output .= '<br /><br /><br /><br /><hr /><br />'
-//						.View::factory('profiler/stats')->render();
-				}
-			}
-
 			// Serve response body
 			$this->response->body($output);
 		}

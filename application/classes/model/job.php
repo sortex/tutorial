@@ -25,11 +25,11 @@ class Model_Job extends ORM {
 		);
 	}
 
-	public static function get_job_by($id)
+	public static function get_job_by($user_id)
 	{
 		return DB::select()
 			->from('jobs')
-			->where('user_id', '=', $id)
+			->where('user_id', '=', $user_id)
 			->execute()
 			->as_array();
 	}

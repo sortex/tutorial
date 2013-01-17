@@ -4,6 +4,7 @@ class Controller_Welcome extends Controller_Site {
 
 	public function action_index()
 	{
+
 	}
 
-} // End Welcome
+} // End Controller_Welcome
