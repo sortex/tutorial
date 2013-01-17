@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{{base_url}}media/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="{{base_url}}media/css/formalize.css" />
+        <link rel="stylesheet" type="text/css" href="{{base_url}}media/css/notices.css" />
+        <link href="{{base_url}}media/css/template.css" rel="stylesheet" type="text/css" />
+        <title>{{title}}</title>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Welcome to Kohana project</h1>
+			<ul>
+				<li><a href="{{base_url}}">Home</a></li>
+				<li><a href="{{base_url}}user">Users</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			{{>content}}
+		</div>
+	</body>
+</html>

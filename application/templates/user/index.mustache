@@ -1,0 +1,39 @@
+<div id="users">
+    <h2>Users</h2>
+    <a href="{{routes.user_form}}">Add user</a> |
+    <table>
+        <colgroup>
+            <col width="10%" />
+            <col width="15%" />
+            <col />
+            <col width="5%" />
+            <col width="15%" />
+            <col width="15%" />
+            <col width="10%" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>User name</th>
+            <th>Full name</th>
+            <th>Age</th>
+            <th>Created</th>
+            <th>Modified</th>
+            <th>Advance</th>
+        </tr>
+        </thead>
+        <tbody>
+		{{#users}}
+			<tr>
+				<td>{{id}}</td>
+				<td>{{username}}</td>
+				<td>{{full_name}}</td>
+				<td>{{age}}</td>
+				<td>{{created}}</td>
+				<td>{{modified}}</td>
+				<td><a href="{{routes.user_form}}/{{id}}">Edit</a> | <a href="{{routes.user_job}}/{{id}}?username={{username}}">Jobs</a></td>
+			</tr>
+		{{/users}}
+        </tbody>
+    </table>
+</div>

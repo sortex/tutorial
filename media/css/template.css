@@ -1,0 +1,40 @@
+div#header {
+  width: 60%;
+  margin: 0 auto; }
+  div#header h1 {
+    text-align: center; }
+  div#header ul {
+    display: inline-block;
+    list-style: none; }
+    div#header ul li {
+      float: left;
+      width: 100px;
+      height: 20px;
+      margin-right: 10px;
+      border: 5px ridge black; }
+      div#header ul li a {
+        float: left;
+        width: 100%;
+        line-height: 20px;
+        text-align: center;
+        color: #000000; }
+        div#header ul li a:hover {
+          background-color: #48c6ec;
+          color: #ffffff;
+          font-weight: bold; }
+
+div#content {
+  width: 60%;
+  margin: 0 auto; }
+  div#content a {
+    font-weight: bold;
+    color: #0000DA; }
+  div#content h2 {
+    text-align: center; }
+  div#content table {
+    float: left;
+    width: 100%; }
+    div#content table td, div#content table th {
+      border: 1px solid black;
+      text-align: center;
+      padding: 5px; }

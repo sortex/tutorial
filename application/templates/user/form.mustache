@@ -1,0 +1,22 @@
+<h2>User form</h2>
+{{>notices}}
+<a href="{{routes.user_index}}"><< Back</a> |
+<form id="users-form" action="{{base_url}}user/form/{{user.id}}" method="POST">
+    <fieldset>
+		<div class="line">
+			User name:<br />
+			<input type="text" name="username" value="{{user.username}}" /><br/>
+		</div>
+		<div class="line">
+			Full name:<br>
+			<input type="text" name="full_name" value="{{user.full_name}}" /><br />
+		</div>
+		<div class="line">
+			Age:<br>
+			<input type="text" name="age" value="{{user.age}}" /><br />
+		</div>
+		<div class="controls">
+			<button type="submit" name="sub" >Submit</button>
+		</div>
+    </fieldset>
+</form>
