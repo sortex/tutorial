@@ -44,4 +44,10 @@ class Controller_User extends Controller_Site {
 
 		$this->view->user = $post;
 	}
+
+	public function action_delete()
+	{
+		$id = $this->request->param('id');
+	}
+
 } // End Controller_User

@@ -1,6 +1,5 @@
 /**
  * User client-side controller
- * - For register/login/forgot/reset
  *
  * @package    Ongage\User
  * @category   Client-side
@@ -15,6 +14,38 @@ App.controllers.user = {
 	 * user/index
 	 */
 	index: function () {
+		var $page  = $('#users'),
+			window_height = $(window).height(),
+			window_width = $(window).width();
 
+		$page.on('click', '.delete', function() {
+			var $id = $(this);
+			log($id);
+			App.Dialog.show('confirm', 'User delete', $('<p />').append('Are you shure want to delete this user?'), {
+				width: window_width*0.05,
+				height: window_height*0.40,
+				position: ['center', window_height*0.05],
+				buttons: [
+					{
+						label: 'Close'
+					},
+					{
+						label: 'Confirm',
+						callback: function() {
+							log('damn');
+							$.ajax({
+								type: 'POST',
+								url: App.base+'user/delete/'+$id,
+								dataType: 'json',
+								success: function (response) {
+								}
+							});
+							return false;
+						}
+					}
+				]
+			});
+			return false;
+		});
 	}
 };

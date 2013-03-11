@@ -37,18 +37,23 @@
     width: 60%;
     margin: 0 auto;
 
-    a { font-weight: bold; color: #0000DA; }
-
-    h2 { text-align: center; color: #000000; }
-
-    table {
+    div#users {
       float: left;
       width: 100%;
 
-      td, th {
-        border: 1px solid #000000;
-        text-align: center;
-        padding: 5px;
+      a { font-weight: bold; color: #0000DA; }
+
+      h2 { text-align: center; color: #000000; }
+
+      table {
+        float: left;
+        width: 100%;
+
+        td, th {
+          border: 1px solid #000000;
+          text-align: center;
+          padding: 5px;
+        }
       }
     }
   }

@@ -9,7 +9,7 @@
             <col width="5%" />
             <col width="15%" />
             <col width="15%" />
-            <col width="10%" />
+            <col width="15%" />
         </colgroup>
         <thead>
         <tr>
@@ -31,7 +31,7 @@
 				<td>{{age}}</td>
 				<td>{{created}}</td>
 				<td>{{modified}}</td>
-				<td><a href="{{routes.user_form}}/{{id}}">Edit</a> | <a href="{{routes.user_job}}/{{id}}?username={{username}}">Jobs</a></td>
+				<td><a href="{{routes.user_job}}/{{id}}?username={{username}}">Jobs</a> | <a href="{{routes.user_form}}/{{id}}">Edit</a> | <a class="delete" >Delete</a></td>
 			</tr>
 		{{/users}}
         </tbody>
