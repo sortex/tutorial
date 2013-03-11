@@ -36,7 +36,7 @@ class Controller_Jobs extends Controller_Site {
 				// Success message
 				Notices::add('success', 'Well done! '.($job_id ? 'updated' : 'created').' successfuly!');
 
-				$this->request->redirect('jobs/form/'.$job->id.'?user_id='.$user_id.'&username='.$username);
+				$this->request->redirect('jobs/form/'.$job->id.'?user_id='.$user_id.'&username='.$user->username);
 			}
 			catch (ORM_Validation_Exception $e)
 			{

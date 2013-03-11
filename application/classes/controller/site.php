@@ -25,6 +25,7 @@ class Controller_Site extends Controller {
 		if (Kohana::find_file('classes', strtolower(str_replace('_', '/', $view_name))))
 		{
 			$this->view = new $view_name;
+			$this->view->assets(new Assets);
 		}
 	}
 

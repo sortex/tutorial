@@ -100,6 +100,10 @@ Kohana::$config->attach(new Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
+	// Define dependencies between assets and views
+	// @link  https://github.com/Zeelot/kohana-assets
+	'assets'     => MODPATH.'assets',
+
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
