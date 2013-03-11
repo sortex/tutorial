@@ -18,6 +18,107 @@ class View_Layout extends Kostache_Layout {
 	}
 
 	/**
+	 * @var Assets object to add css/js groups to
+	 */
+	protected $_assets;
+
+	/**
+	 * Gets or sets the Assets object in the view
+	 *
+	 * @param  Object  $assets  the Assets object
+	 * @return self
+	 */
+	public function assets($assets)
+	{
+		$this->_assets = $assets;
+		$assets->group('default');
+		return $this;
+	}
+
+	/**
+	 * Overloads render to handle assets head and body
+	 *
+	 * @return string
+	 */
+	public function render()
+	{
+		$content = parent::render();
+
+		return str_replace(
+			array(
+				'[[assets_head]]',
+				'[[assets_body]]'
+			),
+			array(
+				$this->assets_head(),
+				$this->assets_body()
+			),
+			$content
+		);
+	}
+
+	/**
+	 * Gets assets group for 'head'
+	 *
+	 * @return string
+	 */
+	public function assets_head()
+	{
+		if ( ! $this->_assets)
+			return '';
+
+		$assets = '';
+		foreach ($this->_assets->get('head') as $asset)
+		{
+			$assets .= $asset."\n";
+		}
+
+		return $assets;
+	}
+
+	/**
+	 * Gets assets group for 'body'
+	 *
+	 * @return string
+	 */
+	public function assets_body()
+	{
+		if ( ! $this->_assets)
+			return '';
+
+		$route_name = Route::name(Request::$current->route());
+		$controller = Request::$current->controller();
+		$action = Request::$current->action();
+
+		$url_base = URL::base();
+		$environment = Kohana::$environment;
+
+		$assets = <<<HTML
+			<script type="text/javascript">
+				try {
+					var App = {};
+					App.base = '$url_base';
+					App.environment = '$environment';
+					App.route = { route: '$route_name', controller: '$controller', action: '$action' };
+
+				} catch(e) {
+					alert('Error loading app.js');
+					console.log(e);
+				}
+			</script>
+HTML;
+
+		foreach ($this->_assets->get('body') as $asset)
+		{
+			$assets .= $asset."\n";
+		}
+
+//		$assets .= "\n".'<script type="text/javascript">'.Element::script().'</script>';
+
+		return $assets;
+	}
+
+	/**
 	 * Collects all notices
 	 *
 	 * @uses   Notices

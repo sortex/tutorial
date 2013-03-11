@@ -11,40 +11,7 @@
 
 $(function() {
 	
-	// Automatically calls all functions in FORMALIZE.init
-	FORMALIZE.go();
-
-	// Add text inputs "reset" button
-	$('form.filter, form.reset-texts').each(HELPER.add_text_reset_button);
-
-	// Setup trick for styling file inputs buttons with class "browse"
-	App.widgets.setup_input_file.apply($(".fileinput input[type=file].browse"));
-
 	var $body = $('body');
-
-	// Setup navigation
-	App.widgets.setup_navigation($('#navigation'));
-
-	// Setup sub menus
-	App.widgets.setup_sub_menus($('#topnav'));
-
-	$body
-		// Ongage support dialog
-		.on('click', '.ongage-support', App.widgets.support_dialog)
-		// Ongage FAQ dialog
-		.on('click', '.ongage-faq', App.widgets.faq_dialog)
-		// ESP Setup link - check for "In Progress" ESPs
-		.on('click', '.esp-setup', App.widgets.checkInProgressESPs)
-		// Initialize tooltips
-		.tooltip({ selector: '.info,.ui-datepicker-trigger' });
-
-	$('html')
-		// Setup tooltips with breaking text lines ("white-space: normal;")
-		.tooltip({
-			selector: '.info2',
-			template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner normal-white-space"></div></div>',
-			html: true
-		});
 
 	// Set datepicker defaults
 	$.datepicker.setDefaults({
@@ -73,11 +40,11 @@ $(function() {
 		}
 	});
 
-	// Charterize - setting defaults
-	$.fn.chart.set_defaults({
-		url: App.base+'api/reports/query',
-		footer: { text: 'OngageConnect\u2122' }
-	});
+//	// Charterize - setting defaults
+//	$.fn.chart.set_defaults({
+//		url: App.base+'api/reports/query',
+//		footer: { text: 'OngageConnect\u2122' }
+//	});
 
 	// Global AJAX timeout
 	$.ajaxSetup({
@@ -110,14 +77,6 @@ $(function() {
 		}
 	});
 
-	// Bind list-change select onchange event - submit form when the list changes
-	$body.find('#list_picker').bind('change', function() {
-		this.form.submit();
-	});
-
 	// Dispatches JS controller
 	App.dispatcher();
-
-
-
 });

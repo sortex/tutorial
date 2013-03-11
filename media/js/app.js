@@ -13,7 +13,7 @@ var App = window.App || {};
 App.controllers  = {};
 
 App.base         = App.base || '';
-App.media_base   = App.media_base || '';
+//App.media_base   = App.media_base || '';
 App.route        = App.route || { route: '', controller: '', action: '' };
 App.widgets      = {};
 App.controllers  = {};

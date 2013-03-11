@@ -6,6 +6,12 @@ class View_User_Index extends View_Layout {
 
 	private $_date_format = "d/m/Y H:i";
 
+	public function assets($assets)
+	{
+		$assets->group('user');
+		return parent::assets($assets);
+	}
+
 	public function users()
 	{
 		$users = Model_User::get_users();
