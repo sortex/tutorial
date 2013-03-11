@@ -29,33 +29,25 @@ if (typeof jQuery != "undefined"){
 
 		// Extending the jQuery object to add notices
 		// Example: $('div.notices-container').add_notice('success', 'You have succeeded!', true);
-		jQuery.fn.add_notice = function(type, message, persist){
-
+		jQuery.fn.add_notice = function(type, message, noscroll){
+			if ( ! noscroll) { scrollTo(0,0); }
 			var container = $(this);
 
-			var ajax_url = '/notice/add';
-			if (type != undefined){
-				ajax_url += '/'+escape(type);
-				if (message != undefined){
-					ajax_url += '/'+escape(message);
-					if (persist == true){
-						ajax_url += '/TRUE';
-					}
-				}
-			}
+			// Creating notice markup
+			var $notice = $('<div />').addClass('notice '+type);
+			$notice.append($('<div />').addClass('notice-content').html(message));
 
-			$.ajax({
-				url: ajax_url,
-				cache: false,
-				dataType: 'json',
-				success: function(response){
-					if (response.status == "success"){
-						container.append(response.data);
-						container.find("div.notice-close:last").show();
-					}
-				},
-				error: $.noop()
+			container.append($notice);
+			return this;
+		};
+
+		// Close any active notices
+		jQuery.fn.remove_all_notices = function(){
+			var container = $(this);
+			container.find('.notice').each(function () {
+				$(this).remove();
 			});
+			return this;
 		};
 
 	})})(jQuery); // Prevent conflicts with other js libraries
