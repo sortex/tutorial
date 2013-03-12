@@ -24,6 +24,27 @@ class Model_User extends ORM {
 	}
 
 	/**
+	 * Extending the delete method of user model
+	 * - deleting user jobs before deleting user.
+	 *
+	 * @chainable
+	 * @return Model_User
+	 * @throws Kohana_Exception
+	 */
+	public function delete()
+	{
+		if ( ! $this->_loaded)
+			throw new Kohana_Exception('Cannot delete :model model because it is not loaded.', array(':model' => $this->_object_name));
+
+		// Deleting user jobs
+		DB::delete('jobs')
+			->where('user_id', '=', $this->id)
+			->execute();
+
+		return parent::delete();
+	}
+
+	/**
 	 * Get all users
 	 *
 	 * @return array

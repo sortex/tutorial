@@ -14,17 +14,15 @@ App.controllers.user = {
 	 * user/index
 	 */
 	index: function () {
-		var $page  = $('#users'),
-			window_height = $(window).height(),
-			window_width = $(window).width();
+		var $page  = $('#users');
 
 		$page.on('click', '.delete', function() {
-			var $id = $(this);
-			log($id);
-			App.Dialog.show('confirm', 'User delete', $('<p />').append('Are you shure want to delete this user?'), {
-				width: window_width*0.05,
-				height: window_height*0.40,
-				position: ['center', window_height*0.05],
+			var $button  = $(this),
+				id       = $button.data('id'),
+				username = $button.data('username');
+
+			App.Dialog.show('confirm', 'User delete', $('<div />').append($('<p />').text('Are you sure want to delete this user: '+username+'?')), {
+				position: 'center',
 				buttons: [
 					{
 						label: 'Close'
@@ -32,12 +30,21 @@ App.controllers.user = {
 					{
 						label: 'Confirm',
 						callback: function() {
-							log('damn');
+							$('#notices_container').remove_all_notices();
 							$.ajax({
 								type: 'POST',
-								url: App.base+'user/delete/'+$id,
+								url: App.base+'user/delete/'+id,
 								dataType: 'json',
 								success: function (response) {
+									if (response.success)
+									{
+										App.Dialog.close();
+										$button.parents('tr').remove();
+										$('#notices_container').add_notice('success', 'User \''+username+'\' has been deleted successfully.');
+									}
+									else{
+										$('#notices_container').add_notice('error', response.errors);
+									}
 								}
 							});
 							return false;

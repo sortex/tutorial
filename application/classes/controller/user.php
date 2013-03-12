@@ -4,7 +4,9 @@ class Controller_User extends Controller_Site {
 
 	public function action_index()
 	{
-
+		// Get all users
+		$users = Model_User::get_users();
+		$this->view->users = $users;
 	}
 
 	public function action_form()
@@ -47,7 +49,48 @@ class Controller_User extends Controller_Site {
 
 	public function action_delete()
 	{
-		$id = $this->request->param('id');
+		try
+		{
+			$user = new Model_User($this->request->param('id'));
+
+			if ( ! $user->loaded())
+				throw new Kohana_Exception('User Not Found!');
+
+			$user->delete();
+		}
+		catch (Kohana_Exception $e)
+		{
+			$errors = $e->getMessage();
+		}
+
+		$response = array(
+			'success' => isset($errors) ? 0 : 1,
+			'errors'  => isset($errors) ? $errors : array(),
+		);
+
+		$this->response->headers('Content-Type', 'text/json');
+		$this->view = json_encode($response);
+
+	}
+
+	public function action_get_users()
+	{
+		try
+		{
+			$users = Model_User::get_users();
+		}
+		catch (Kohana_Exception $e)
+		{
+			$errors = $e->errors('');
+		}
+
+//		$response = array(
+//			'success' => isset($errors) ? 0 : 1,
+//			'errors'  => isset($errors) ? $errors : array(),
+//		);
+
+		$this->response->headers('Content-Type', 'text/json');
+		$this->view = json_encode($users);
 	}
 
 } // End Controller_User

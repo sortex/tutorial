@@ -3,6 +3,7 @@
 class View_User_Index extends View_Layout {
 
 	public $title = 'User\'s data';
+	public $users;
 
 	private $_date_format = "d/m/Y H:i";
 
@@ -14,9 +15,7 @@ class View_User_Index extends View_Layout {
 
 	public function users()
 	{
-		$users = Model_User::get_users();
-
-		foreach ($users as & $user)
+		foreach ($this->users as & $user)
 		{
 			foreach (['created', 'modified'] as $field_name)
 			{
@@ -27,7 +26,7 @@ class View_User_Index extends View_Layout {
 		}
 		unset($user);
 
-		return $users;
+		return $this->users;
 	}
 
 } // End View_User_Index

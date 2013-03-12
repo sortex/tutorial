@@ -54,4 +54,9 @@ class Controller_Jobs extends Controller_Site {
 
 		$this->view->job = $post;
 	}
+
+	public function action_delete()
+	{
+
+	}
 }

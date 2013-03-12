@@ -1,7 +1,8 @@
 <div id="users">
     <h2>Users</h2>
+	{{>notices}}
     <a href="{{routes.user_form}}">Add user</a> |
-    <table>
+    <table class="table">
         <colgroup>
             <col width="10%" />
             <col width="15%" />
@@ -31,7 +32,11 @@
 				<td>{{age}}</td>
 				<td>{{created}}</td>
 				<td>{{modified}}</td>
-				<td><a href="{{routes.user_job}}/{{id}}?username={{username}}">Jobs</a> | <a href="{{routes.user_form}}/{{id}}">Edit</a> | <a class="delete" >Delete</a></td>
+				<td>
+					<a href="{{routes.user_job}}/{{id}}?username={{username}}">Jobs</a> |
+					<a href="{{routes.user_form}}/{{id}}">Edit</a> |
+					<a class="delete" data-id="{{id}}" data-username="{{username}}">Delete</a>
+				</td>
 			</tr>
 		{{/users}}
         </tbody>

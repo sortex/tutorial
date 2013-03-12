@@ -1,26 +1,26 @@
 <style>
-    #students table td, #students table th { border: 1px solid #000000 }
+	#students table td, #students table th { border: 1px solid #000000 }
 </style>
 <div id="students">
-    <h2>Students</h2>
-    <table>
-        <colgroup>
-            <col width="4%" />
-            <col />
-            <col width="15%" />
-            <col width="15%" />
-            <col width="15%" />
-        </colgroup>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Course</th>
-            <th>Grade</th>
-        </tr>
-        </thead>
-        <tbody>
+	<h2>Students</h2>
+	<table>
+		<colgroup>
+			<col width="4%" />
+			<col />
+			<col width="15%" />
+			<col width="15%" />
+			<col width="15%" />
+		</colgroup>
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Course</th>
+			<th>Grade</th>
+		</tr>
+		</thead>
+		<tbody>
 		{{#students}}
 			<tr>
 				<td>{{id}}</td>
@@ -31,6 +31,6 @@
 				<td><a href="{{routes.student_form}}/{{id}}">Edit</a></td>
 			</tr>
 		{{/students}}
-        </tbody>
-    </table>
+		</tbody>
+	</table>
 </div>

@@ -8,6 +8,12 @@ class View_Jobs_Index extends View_Layout {
 
 	public $user_id;
 
+	public function assets($assets)
+	{
+		$assets->group('jobs');
+		return parent::assets($assets);
+	}
+
 	public function jobs()
 	{
 		$jobs =  Model_Job::get_job_by($this->user_id);

@@ -1,27 +1,28 @@
 <div id="jobs">
-    <h2>{{username}} jobs</h2>
-    <a href="{{routes.user_index}}">Users</a> |
-    <a href="{{routes.job_form}}?user_id={{user_id}}&username={{username}}">Add job</a>
-    <table>
-        <colgroup>
-            <col width="10%" />
-            <col />
-            <col width="15%" />
-            <col width="15%" />
-            <col width="15%" />
-            <col width="15%" />
-        </colgroup>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Money per hour</th>
-            <th>Created</th>
-            <th>Modified</th>
-            <th>Advance</th>
-        </tr>
-        </thead>
-        <tbody>
+	<h2>{{username}} jobs</h2>
+	{{>notices}}
+	<a href="{{routes.user_index}}">Users</a> |
+	<a href="{{routes.job_form}}?user_id={{user_id}}&username={{username}}">Add job</a>
+	<table class="table">
+		<colgroup>
+			<col width="10%" />
+			<col />
+			<col width="15%" />
+			<col width="15%" />
+			<col width="15%" />
+			<col width="15%" />
+		</colgroup>
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Money per hour</th>
+			<th>Created</th>
+			<th>Modified</th>
+			<th>Advance</th>
+		</tr>
+		</thead>
+		<tbody>
 		{{#jobs}}
 			<tr>
 				<td>{{id}}</td>
@@ -29,9 +30,12 @@
 				<td>{{money_per_hour}}</td>
 				<td>{{created}}</td>
 				<td>{{modified}}</td>
-				<td><a href="{{routes.job_form}}/{{id}}?user_id={{user_id}}&username={{username}}">Edit</a>
+				<td>
+					<a href="{{routes.job_form}}/{{id}}?user_id={{user_id}}&username={{username}}">Edit</a> |
+					<a class="delete" data-id="{{id}}" data-job="{{title}}">Delete</a>
+				</td>
 			</tr>
 		{{/jobs}}
-        </tbody>
-    </table>
+		</tbody>
+	</table>
 </div>
