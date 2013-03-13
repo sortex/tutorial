@@ -72,4 +72,55 @@ class Model_User extends ORM {
 			->as_array();
 	}
 
+	public static function get_page(array $filters,$sort = 'id', $order, $offset = 0, $limit = 50)
+	{
+		$user_columns = array('id', 'username', 'full_name', 'age', 'created', 'modified');
+
+		$sort  = in_array($sort, $user_columns)         ? $sort  : 'id';
+		$order = in_array($order, array('asc', 'desc')) ? $order : 'DESC';
+
+		$query = DB::select()
+			->select_array($user_columns)
+			->from('users')
+			->offset($offset)
+			->limit($limit)
+			->order_by($sort, $order);
+
+		$filter_map = array(
+			array(),
+		);
+
+		foreach ($filters as $filter)
+		{
+			if ($filter[1] == 'LIKE')
+			{
+				$filter[2] = '%'.$filter[2].'%';
+			}
+
+			// Power search => email template name OR subject
+			if ($filter[0] == 'name')
+			{
+				$query
+					->and_where_open()
+					->or_where('name',    'LIKE', $filter[2])
+					->or_where('subject', 'LIKE', $filter[2])
+					->and_where_close();
+			}
+			else
+			{
+				$query->and_where($filter[0], $filter[1], $filter[2]);
+			}
+		}
+
+		$total = db::select(array('COUNT(DISTINCT "id")', 'total'))
+			->from('users');
+
+		$result = $query->execute()->as_array('id');
+
+		return array(
+			(int) $total->execute()->get('total', 0),
+			array_values($result)
+		);
+	}
+
 } // End Model_User

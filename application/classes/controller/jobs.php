@@ -57,6 +57,26 @@ class Controller_Jobs extends Controller_Site {
 
 	public function action_delete()
 	{
+		try
+		{
+			$job = new Model_Job($this->request->param('id'));
 
+			if ( ! $job->loaded())
+				throw new Kohana_Exception('Job Not Found!');
+
+			$job->delete();
+		}
+		catch (Kohana_Exception $e)
+		{
+			$errors = $e->getMessage();
+		}
+
+		$response = array(
+			'success' => isset($errors) ? 0 : 1,
+			'errors'  => isset($errors) ? $errors : array(),
+		);
+
+		$this->response->headers('Content-Type', 'text/json');
+		$this->view = json_encode($response);
 	}
 }

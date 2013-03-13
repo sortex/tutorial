@@ -75,22 +75,36 @@ class Controller_User extends Controller_Site {
 
 	public function action_get_users()
 	{
+		// Extract model filters keys/values from query string
+		$filters = arr::extract($this->request->query(), array(
+				'username', 'full_name', 'age'
+			));
 		try
 		{
-			$users = Model_User::get_users();
+			list($total, $results) =
+				Model_User::get_page(
+					$filters,
+					$this->request->query('sort'),
+					$this->request->query('order'),
+					(int) $this->request->query('offset'),
+					(int) $this->request->query('limit') ?: 50
+			);
 		}
 		catch (Kohana_Exception $e)
 		{
-			$errors = $e->errors('');
+			$errors = $e->getMessage();
 		}
 
-//		$response = array(
-//			'success' => isset($errors) ? 0 : 1,
-//			'errors'  => isset($errors) ? $errors : array(),
-//		);
+		$response = array(
+			'metadata' => array(
+				'error' => isset($errors) ? $errors : FALSE,
+				'total' => isset($total) ? $total : 0,
+			),
+			'payload'  => isset($results) ? $results : array(),
+		);
 
-		$this->response->headers('Content-Type', 'text/json');
-		$this->view = json_encode($users);
+		$this->response->headers('Content-Type', 'application/json');
+		$this->view = json_encode($response);
 	}
 
 } // End Controller_User

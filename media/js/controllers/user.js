@@ -21,11 +21,11 @@ App.controllers.user = {
 				id       = $button.data('id'),
 				username = $button.data('username');
 
-			App.Dialog.show('confirm', 'User delete', $('<div />').append($('<p />').text('Are you sure want to delete this user: '+username+'?')), {
+			App.Dialog.show('user_delete', 'User delete', $('<div />').append($('<p />').text('Are you sure want to delete this user: '+username+'?')), {
 				position: 'center',
 				buttons: [
 					{
-						label: 'Close'
+						label: 'Cancel'
 					},
 					{
 						label: 'Confirm',
