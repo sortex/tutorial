@@ -1,3 +1,16 @@
+div#users {
+  float: left;
+  width: 100%; }
+
+div#jobs {
+  float: left;
+  width: 100%; }
+
+#profiler {
+  float: left;
+  width: 100%;
+  margin-top: 60px; }
+
 #wrapper {
   float: left;
   width: 100%;
@@ -35,14 +48,6 @@
     #wrapper div#content h2 {
       text-align: center;
       color: #000000; }
-    #wrapper div#content table {
+    #wrapper div#content .line {
       float: left;
-      width: 100%; }
-      #wrapper div#content table td, #wrapper div#content table th {
-        border: 1px solid black;
-        text-align: center;
-        padding: 5px; }
-  #wrapper #profiler {
-    float: left;
-    width: 100%;
-    margin-top: 60px; }
+      padding: 5px 5px 5px 0; }

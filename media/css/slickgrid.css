@@ -1,0 +1,646 @@
+/* slick grid theme ----------------------------------- */
+/*
+IMPORTANT:
+In order to preserve the uniform grid appearance, all cell styles need to have padding, margin and border sizes.
+No built-in (selected, editable, highlight, flashing, invalid, loading, :focus) or user-specified CSS
+classes should alter those!
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000310}}
+.grid-header {
+	margin: 0;
+	padding: 10px 10px 10px 15px;
+	background-color: #E3E3E3;
+	border-bottom: 1px solid #d8d9d9;
+	border-top: 1px solid #d8d9d9;
+	color: #535353;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 20px;
+	text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000319}}
+.grid-header label {
+	display: inline-block;
+	cursor: default;
+	font-weight: bold;
+	margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000327}}
+.grid-controls {
+	float: left;
+	margin: 5px 0;
+	width: 100%;
+	line-height: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000337}}
+.grid-controls select {
+	padding: 3px 3px 3px 1px;
+	height: 25px;
+	margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000339}}
+.grid-controls .btn-group {
+	float: right;
+	margin-left: 7px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000342}}
+div.datagrid {
+	background: white;
+	outline: 0;
+	height: 489px;
+	margin: 0;
+	clear: both;
+	border-left: 1px solid #c5c5c5;
+	border-right: 1px solid #c5c5c5;
+	border-bottom: 1px solid #adadad;
+	/* slickgrid in grouped mode */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000349}}
+div.datagrid .slick-header {
+	background: url("../img/layout/table-head.png") repeat-x 0 0 #f1f1f1;
+	border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000353}}
+div.datagrid .slick-header .slick-header-column {
+	background: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000355}}
+div.datagrid .slick-header .slick-header-column:hover, div.datagrid .slick-header .slick-header-column-active {
+	background-color: #E6E6E6;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000359}}
+div.datagrid .slick-header .slick-header-column.invisible {
+	visibility: visible;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000361}}
+div.datagrid .slick-header .slick-header-column.invisible .slick-column-name {
+	visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000362}}
+div.datagrid .slick-header .slick-header-column.invisible .slick-sort-indicator {
+	visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000365}}
+div.datagrid .slick-header .slick-header-column-sorted {
+	background-color: #e6e6e6;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000366}}
+div.datagrid .slick-header .slick-header-column-filtered {
+	background-color: #a9e7fd;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000368}}
+div.datagrid .slick-header .slick-sort-indicator {
+	margin-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000373}}
+div.datagrid .slick-row {
+	position: absolute;
+	background: white;
+	border: 0px;
+	line-height: 26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000379}}
+div.datagrid .slick-row.odd {
+	background: #f0f0f0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000380}}
+div.datagrid .slick-row:hover {
+	background: #dcebf0 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000382}}
+div.datagrid .slick-row .slick-cell {
+	font-size: 12px;
+	color: #535353;
+	border-bottom: solid 1px #dbdbdb;
+	border-right-color: #dbdbdb;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000388}}
+div.datagrid .slick-row .slick-cell a .icon {
+	margin: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000391}}
+div.datagrid .slick-row.selected {
+	z-index: 10;
+	background: #DFE8F6;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000396}}
+div.datagrid .slick-row a {
+	color: #08a3d9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\0000399}}
+div.datagrid .slick-row span {
+	/* Campaign statuses */
+	/* New */
+	/* Scheduled */
+	/* In Progress */
+	/* Completed with Errors */
+	/* Error  */
+	/* Deleted  */
+	/* Completed with Errors */
+	/* Reports statuses (Import & Export) */
+	/* More statuses */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003100}}
+div.datagrid .slick-row span.status {
+	display: block;
+	padding: 3px;
+	line-height: 14px;
+	background-color: #fff;
+	border: 3px solid gainsboro;
+	color: #535353;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003103}}
+div.datagrid .slick-row span.status_60001 {
+	border-color: #a9e7fd;
+	color: #029dd3;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003104}}
+div.datagrid .slick-row span.status_60002 {
+	border-color: #dcdcdc;
+	color: #535353;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003105}}
+div.datagrid .slick-row span.status_60003 {
+	border-color: #fbe88f;
+	color: #ec9601;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003107}}
+div.datagrid .slick-row span.status_60004, div.datagrid .slick-row span.status_60008 {
+	border-color: #d6ef62;
+	color: #768f01;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003108}}
+div.datagrid .slick-row span.status_60005 {
+	border-color: #fa9995;
+	color: #af2330;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003110}}
+div.datagrid .slick-row span.status_60006, div.datagrid .slick-row span.status_60007 {
+	border-color: #fa9995;
+	color: #af2330;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003113}}
+div.datagrid .slick-row span.status_60008 {
+	background: url("../img/icons/errors.png") no-repeat 100% 50% transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003119}}
+div.datagrid .slick-row span.status_40001, div.datagrid .slick-row span.status_40002, div.datagrid .slick-row span.status_50001, div.datagrid .slick-row span.status_50002 {
+	border-color: #fbe88f;
+	color: #ec9601;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003122}}
+div.datagrid .slick-row span.status_40003, div.datagrid .slick-row span.status_50003 {
+	border-color: #d6ef62;
+	color: #768f01;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003126}}
+div.datagrid .slick-row span.status_40004, div.datagrid .slick-row span.status_50004, div.datagrid .slick-row span.status_90001 {
+	border-color: #fa9995;
+	color: #af2330;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003129}}
+div.datagrid .slick-row span.status_Active {
+	border-color: #d6ef62;
+	color: #768f01;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003130}}
+div.datagrid .slick-row span.status_Approved {
+	border-color: #d6ef62;
+	color: #768f01;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003131}}
+div.datagrid .slick-row span.status_Inactive {
+	border-color: #fa9995;
+	color: #af2330;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003132}}
+div.datagrid .slick-row span.status_Test {
+	border-color: #dcdcdc;
+	color: #535353;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003133}}
+div.datagrid .slick-row span.status_Pending {
+	border-color: #dcdcdc;
+	color: #535353;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003134}}
+div.datagrid .slick-row span.status_Deleted {
+	border-color: #fa9995;
+	color: #af2330;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003140}}
+div.datagrid.grouped .slick-row .slick-cell.r0 {
+	padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003141}}
+div.datagrid.grouped .slick-row.odd {
+	background: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003142}}
+div.datagrid.grouped .slick-row.slick-group {
+	background: #f0f0f0 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003144}}
+div.datagrid.grouped .slick-row.slick-group .slick-cell.r0 {
+	padding-left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003149}}
+.loading-indicator {
+	display: inline-block;
+	padding: 12px;
+	background: white;
+	-opacity: 0.5;
+	color: black;
+	font-weight: bold;
+	z-index: 9999;
+	border: 1px solid #dddddd;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-box-shadow: 0 0 5px grey;
+	-webkit-box-shadow: 0px 0px 5px grey;
+	-text-shadow: 1px 1px 1px white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003164}}
+.loading-indicator label {
+	cursor: default;
+	padding-left: 20px;
+	background: url("../img/icons/loading.gif") no-repeat 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003171}}
+.cell-selection {
+	border-right-color: silver;
+	border-right-style: solid;
+	background: #f5f5f5;
+	color: gray;
+	text-align: right;
+	font-size: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003180}}
+.slick-row.selected .cell-selection {
+	background-color: transparent;
+	/* show default selected row background */
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003184}}
+.slick-header-columns {
+	border-top: solid 1px #d7d7d7;
+	border-bottom: solid 1px #a2a2a2;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003189}}
+.slick-column-name {
+	float: left;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003191}}
+.slick-headerrow {
+	background: #f5f5f5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003194}}
+.slick-headerrow .slick-headerrow-column {
+	background: transparent;
+	border-bottom: 0;
+	height: 100%;
+	font-size: 12px;
+	color: #18a9dc;
+	font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003200}}
+.slick-headerrow .slick-headerrow-column.r0 {
+	color: #484848;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003201}}
+.slick-headerrow .slick-headerrow-column.ui-state-default {
+	padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003205}}
+.slick-row.ui-state-active {
+	background: #F5F7D7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003209}}
+.slick-group {
+	border-bottom: 2px solid silver;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003213}}
+.slick-group-toggle {
+	cursor: pointer;
+	margin: 1px 7px 0 4px;
+	padding: 2px 1px 2px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003219}}
+.slick-group-totals {
+	color: gray;
+	background: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003224}}
+.slick-cell.selected {
+	background-color: beige;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003228}}
+.slick-cell.active {
+	border-color: gray;
+	border-style: solid;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003233}}
+.slick-cell.saving {
+	background-image: url("../img/icons/loading.gif");
+	background-position: 96% center;
+	background-repeat: no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003239}}
+.slick-sortable-placeholder {
+	background: silver !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003243}}
+.slick-row[row$="1"], .slick-row[row$="3"], .slick-row[row$="5"], .slick-row[row$="7"], .slick-row[row$="9"] {
+	background: #fafafa;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003247}}
+.slick-row.ui-state-active {
+	background: #F5F7D7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003251}}
+.slick-row.loading {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003256}}
+.slick-cell.invalid {
+	border-color: red;
+}
+
+/* editing -------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003262}}
+.slick-cell .editor-text {
+	width: 100%;
+	font-size: 13px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003267}}
+.slick-cell .editor-checkbox {
+	height: 100%;
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003274}}
+.slick-cell.cell-checkbox {
+	text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003278}}
+.slick-cell .ui-spinner, .slick-cell form fieldset div.schedule_timepicker .ui-spinner, form fieldset div.schedule_timepicker .slick-cell .ui-spinner {
+	position: static;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003281}}
+.slick-cell .ui-spinner .editor-text, .slick-cell form fieldset div.schedule_timepicker .ui-spinner .editor-text, form fieldset div.schedule_timepicker .slick-cell .ui-spinner .editor-text {
+	margin: 0;
+	padding: 4px 6px;
+	border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003283}}
+.slick-cell .ui-spinner .ui-spinner-button, .slick-cell form fieldset div.schedule_timepicker .ui-spinner .ui-spinner-button, form fieldset div.schedule_timepicker .slick-cell .ui-spinner .ui-spinner-button {
+	height: 14.5px;
+	margin: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+/* pagination ----------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003288}}
+.pagination-container {
+	float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003292}}
+.slick-pager {
+	margin: 0 0 10px;
+	background-color: #fff;
+	vertical-align: middle;
+	*zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_mixins\.scss}line{font-family:\000037}}
+.slick-pager:before, .slick-pager:after {
+	display: table;
+	content: "";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_mixins\.scss}line{font-family:\0000311}}
+.slick-pager:after {
+	clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003299}}
+.slick-pager .slick-pager-status {
+	display: inline-block;
+	padding: 8px 6px 6px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003304}}
+.slick-pager .ui-icon-container {
+	display: inline-block;
+	margin: 2px;
+	border-color: gray;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003310}}
+.slick-pager .slick-pager-nav {
+	display: inline-block;
+	float: left;
+	padding: 6px 2px 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003316}}
+.slick-pager .slick-pager-settings {
+	display: block;
+	float: right;
+	padding: 6px 2px 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003322}}
+.slick-pager .slick-pager-settings * {
+	vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003326}}
+.slick-pager .slick-pager-settings a {
+	padding: 2px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003332}}
+.slick-pager .pagination {
+	float: right;
+	direction: ltr;
+	text-align: left;
+	padding: 10px 0 0;
+	margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003335}}
+.slick-pager .pagination a, .slick-pager .pagination > span {
+	float: left;
+	padding: 3px 7px 3px 6px;
+	margin-left: 5px;
+	text-align: center;
+	font-weight: bold;
+	border: 1px solid #d7d7d7;
+	color: #B5B3B3;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003347}}
+.slick-pager .pagination a {
+	text-decoration: none;
+	background-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003351}}
+.slick-pager .pagination a:hover {
+	border: 1px solid #aaaaaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003354}}
+.slick-pager .pagination .current {
+	margin-right: 0;
+	padding: 0 6px 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003358}}
+.slick-pager .pagination .current.next, .slick-pager .pagination .current.prev {
+	opacity: 0.4;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003361}}
+.slick-pager .pagination .next, .slick-pager .pagination .prev {
+	margin-right: 0;
+	padding: 1px 0;
+}
+
+/* column picker -------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003373}}
+.slick-columnpicker {
+	border: 2px solid #acacac;
+	background: #FAFAFA;
+	padding: 0 0 10px;
+	-moz-box-shadow: 2px 2px 2px silver;
+	-webkit-box-shadow: 2px 2px 2px silver;
+	min-width: 100px;
+	max-width: 200px;
+	cursor: default;
+	z-index: 20;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003384}}
+.slick-columnpicker .icon.remove, .slick-columnpicker .ui-dialog .ui-widget-header .ui-dialog-titlebar-close span, .ui-dialog .ui-widget-header .ui-dialog-titlebar-close .slick-columnpicker span {
+	float: right;
+	cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003389}}
+.slick-columnpicker h2 {
+	display: block;
+	margin: 10px;
+	width: auto;
+	font-weight: normal;
+	font-family: inherit;
+	font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003398}}
+.slick-columnpicker ul {
+	clear: both;
+	padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003403}}
+.slick-columnpicker li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003410}}
+.slick-columnpicker input {
+	margin: 4px;
+	top: 0;
+	vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003416}}
+.slick-columnpicker li a {
+	display: block;
+	padding: 4px;
+	font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003422}}
+.slick-columnpicker li a:hover {
+	background: white;
+}
+
+/* scroll-bar ----------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003429}}
+.slick-viewport {
+	overflow-x: hidden !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003431}}
+.slick-viewport::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003436}}
+.slick-viewport::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: rgba(85, 85, 85, 0.8);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003443}}
+.slick-viewport::-webkit-scrollbar-track {
+	background: #9f9f9f;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003448}}
+.slick-viewport::-webkit-scrollbar-button {
+	background: #efefef;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003452}}
+.slick-viewport::-webkit-scrollbar-button:end:increment {
+	background: url("../img/icons/20x20.png") no-repeat -921px -2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003456}}
+.slick-viewport::-webkit-scrollbar-button:start:decrement {
+	background: url("../img/icons/20x20.png") no-repeat -942px -2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alex\/www\/ongage\/apps\/frontend\/media\/sass\/_datagrid\.scss}line{font-family:\00003461}}
+.slick-viewport::-webkit-scrollbar-button:start:decrement,
+.slick-viewport::-webkit-scrollbar-button:end:increment {
+	background-color: #e5e5e5;
+	border-left-color: #c9caca;
+	border-right-color: #c9caca;
+	border-top-color: #cacbcb;
+	border-bottom-color: #a0a1a1;
+}

@@ -75,12 +75,13 @@ class Controller_User extends Controller_Site {
 
 	public function action_get_users()
 	{
-		// Extract model filters keys/values from query string
-		$filters = arr::extract($this->request->query(), array(
-				'username', 'full_name', 'age'
-			));
 		try
 		{
+			// Extract model filters keys/values from query string
+			$filters = arr::extract($this->request->query(), array(
+				'name', 'age'
+			));
+
 			list($total, $results) =
 				Model_User::get_page(
 					$filters,

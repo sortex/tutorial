@@ -2,7 +2,7 @@
 {{>notices}}
 <a href="{{routes.user_job}}/{{user_id}}?username={{username}}"><< Back</a> |
 <form id="jobs-form" action="{{base_url}}jobs/form/{{job.id}}?user_id={{user_id}}&username={{username}}" method="POST">
-    <fieldset>
+	<fieldset>
 		<div class="line">
 			Title:<br />
 			<input type="text" name="title" value="{{job.title}}" /><br/>
@@ -14,5 +14,5 @@
 		<div class="controls">
 			<button type="submit" name="sub" >Submit</button>
 		</div>
-    </fieldset>
+	</fieldset>
 </form>
